@@ -26,10 +26,17 @@ Use otu_ids as the labels for the bar chart.
 Use otu_labels as the hovertext for the chart.
 
 */
+//d3.json, load .then
+var url = '../../samples.json';
+d3.json(url).then(function(samples) {
+  console.log(samples);
+});
+//init populate dropdowns, dropdown change, filtering
 var data = [{
   type: 'bar',
-  x: [20, 14, 23],
-  y: ['giraffes', 'orangutans', 'monkeys'],
+  
+  x: url
+  y: [0,50,100,150],
   orientation: 'h'
 }];
 
@@ -53,14 +60,18 @@ Use otu_labels for the text values.
 */
 //bubble template
 var trace1 = {
-    x: [1, 2, 3, 4],
-    y: [10, 11, 12, 13],
-    mode: 'markers',
-    marker: {
-      size: [40, 60, 80, 100]
-    }
-  };
-  
+  x: [1, 2, 3, 4],
+  y: [10, 11, 12, 13],
+  mode: 'markers',
+  marker: {
+    size: [40, 60, 80, 100]
+  }
+};
+var layout = {
+  hovermode: 'closest',
+  title:'Hover on a Point<br>to Change Color'
+};
+ //needs data object
   var data = [trace1];
   
   var layout = {
@@ -71,3 +82,6 @@ var trace1 = {
   };
   
   Plotly.newPlot('myDiv', data, layout);
+
+  //for hover event
+ 
