@@ -43,8 +43,11 @@ var data = [{
   type: 'bar',
   
   x: [0,50,100,150],
-  y: [dataset}];
+  y: [dataset];
   orientation: 'h'
+  layout = {hovermode:'closest',
+  title:'Click on Points'
+
 }];
 
 Plotly.newPlot('myDiv', data);
@@ -68,10 +71,10 @@ Use otu_labels for the text values.
 //bubble template
 var trace1 = {
   x: [1, 2, 3, 4],
-  y: [10, 11, 12, 13],
+  y: [0,50,100,150,200],
   mode: 'markers',
   marker: {
-    size: [40, 60, 80, 100]
+    size: [0,500,1000,1500,2000,2500,3000]
   }
 };
 var layout = {
@@ -90,5 +93,4 @@ var layout = {
   
   Plotly.newPlot('myDiv', data, layout);
 
-  //for hover event
  
