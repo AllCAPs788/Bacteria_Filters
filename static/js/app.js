@@ -32,11 +32,18 @@ d3.json(url).then(function(samples) {
   console.log(samples);
 });
 //init populate dropdowns, dropdown change, filtering
+function init() {
+var dropdown = d3.select("#selDataset")
+
+var dataset = dropdown.property("value");
+var x = [];
+var y = [];
+
 var data = [{
   type: 'bar',
   
-  x: url
-  y: [0,50,100,150],
+  x: [0,50,100,150],
+  y: [dataset}];
   orientation: 'h'
 }];
 
