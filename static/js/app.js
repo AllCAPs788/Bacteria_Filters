@@ -43,27 +43,44 @@ function optionChanged(value) {
   //add plotly traces (or make sure plotly can see these defined statements for json and filtering)
 //bubble template
   var trace1 = {
-    x: sorted_sample_values.otu_ids,
-    y: sorted_sample_values.sample_values,
+    x: sorted_sample_values[0].otu_ids,
+    y: sorted_sample_values[0].sample_values,
     mode: 'markers',
     marker: {
-      size: sorted_sample_values.sample_values
+      size: sorted_sample_values[0].sample_values
     }
   };
-var bubble = [trace1]
-   var layout = {
-   hovermode: sorted_sample_values.otu_labels
-   title:'Hover on a Point<br>to Change Color'
- };
+  var bubble = [trace1];
+  var layout = {
+    title: 'OTU ID',
+    showlegend: false,
+    height: 600,
+    width: 600,
+  
+    hovermode: sorted_sample_values[0].otu_labels
+    
+  };
+
+  Plotly.newPlot(bubble, layout);
+
+  
+  var data = [{
+    type: 'bar',
+    x: sorted_sample_values[0].otu_ids,
+    y: sorted_sample_values[0].sample_values,
+    orientation: 'h'
+  }];
+  
+  Plotly.newPlot('bar', data);
 
 
-  });
+
+
+
+});
 };
 
-Plotly.newPlot('myDiv', bubble, layout);
-
-
-
+optionChanged();
 
 //needs data object
 //   var data = [trace1];
