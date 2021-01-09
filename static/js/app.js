@@ -28,9 +28,10 @@ var dropdown = d3.select("#selDataset");
 // //create dropdowns via javascript
 // var dataset = dropdown.property("value");
 
-d3.selectAll("#selDataset").on("change", optionChanged);
+//d3.selectAll("#selDataset").on("change", optionChanged);
 
 function optionChanged(value) {
+  console.log(value);
   //var name = dropdown.property("value");
   d3.json(url).then(function(data) {
   //filter and map statements 
@@ -38,11 +39,15 @@ function optionChanged(value) {
   //add text to demo table (id="sample-metadata"), add h tags for text 
   //refer to formatted json
   var samples = data.samples;
-  var sorted_sample_values = samples.filter(sample => sample.id == value);
+  var sorted_sample_values = samples.filter(sample => {
+    return sample.id == value
+  });
   console.log(sorted_sample_values);
   //add plotly traces (or make sure plotly can see these defined statements for json and filtering)
 //bubble template
-  var trace1 = {
+  
+//check templates 50-68
+var trace1 = {
     x: sorted_sample_values[0].otu_ids,
     y: sorted_sample_values[0].sample_values,
     mode: 'markers',
@@ -61,9 +66,8 @@ function optionChanged(value) {
     
   };
 
-  Plotly.newPlot(bubble, layout);
+//  Plotly.newPlot(bubble, layout);
 
-  
   var data = [{
     type: 'bar',
     x: sorted_sample_values[0].otu_ids,
@@ -80,8 +84,12 @@ function optionChanged(value) {
 });
 };
 
-optionChanged();
-
+optionChanged(940);
+/*Object.entries(result).forEach(([key, value]) => {
+  PANEL = d3.select(#sample-metadata)
+  PANEL.append("h6").text(`${key.toUpperCase()}: ${value}`);
+});
+.foreach(key,value) for demographic data
 //needs data object
 //   var data = [trace1];
   
