@@ -47,26 +47,26 @@ function optionChanged(value) {
 //bubble template
   
 //check templates 50-68
-var trace1 = {
-    x: sorted_sample_values[0].otu_ids,
-    y: sorted_sample_values[0].sample_values,
-    mode: 'markers',
-    marker: {
-      size: sorted_sample_values[0].sample_values
-    }
-  };
-  var bubble = [trace1];
-  var layout = {
-    title: 'OTU ID',
-    showlegend: false,
-    height: 600,
-    width: 600,
+// var trace1 = {
+//     x: sorted_sample_values[0].otu_ids,
+//     y: sorted_sample_values[0].sample_values,
+//     mode: 'markers',
+//     marker: {
+//       size: sorted_sample_values[0].sample_values
+//     }
+//   };
+//   var bubble = [trace1];
+//   var layout = {
+//     title: 'OTU ID',
+//     showlegend: false,
+//     // height: 600,
+//     // width: 600,
   
-    hovermode: sorted_sample_values[0].otu_labels
+//     hovermode: sorted_sample_values[0].otu_labels
     
-  };
+//   };
 
-//  Plotly.newPlot(bubble, layout);
+//    Plotly.newPlot('myDiv', bubble, layout);
 
   var data = [{
     type: 'bar',
@@ -134,4 +134,4 @@ optionChanged(940);
     });
   }); 
 };
-  init();
+*/
