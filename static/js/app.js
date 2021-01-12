@@ -17,7 +17,7 @@ Use otu_labels for the text values.
 
 
 //d3.json, load .then
-var url = 'samples.json';
+var url = 'static/js/samples.json';
 // d3.json(url).then(function(samples) {
 //   console.log(samples);
 // });
