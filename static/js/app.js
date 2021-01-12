@@ -126,6 +126,7 @@ optionChanged(940);
   // import json, define sample ids and get dropdown values
   function init() {
   //var url = '../../samples.json';
+ */
   d3.json(url).then(function(samples) {
     //console.log(samples);
     var sample_id = samples.names;
@@ -133,5 +134,5 @@ optionChanged(940);
       dropdown.append("option").text(names).property("value", names);
     });
   }); 
-};
-*/
+
+
